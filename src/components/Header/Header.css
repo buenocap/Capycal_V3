@@ -1,3 +1,40 @@
-.Logo {
+.text-theme {
   font-family: "comic relief", serif;
+}
+
+.active {
+  color: var(--color-EngineeringOrange);
+  /* border-bottom: 2px dashed var(--color-EngineeringOrange); */
+}
+
+.menuNav {
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.menuNav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color-EngineeringOrange);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.menuNav:hover::after {
+  width: 100%;
+  animation: heartbeat116 1.5s ease-in-out 0.3s infinite;
+}
+
+@keyframes heartbeat116 {
+  0%,
+  100% {
+    width: 100%;
+  }
+  50% {
+    width: 60%;
+  }
 }
