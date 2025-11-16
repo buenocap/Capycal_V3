@@ -14,8 +14,9 @@ export default function Header() {
         <img src="./CapycalLogo.png" alt="Capycal Logo" width={50} />
         <p className="text-2xl font-extrabold">Capycal</p>
       </div>
-      <nav className="Nav">
-        <ul className="flex gap-4 text-xl font-bold">
+      {/** Desktop Navigation */}
+      <nav className="Nav hidden md:block">
+        <ul className=" flex flex-row gap-4 text-xl font-bold">
           <li className="menuNav">
             <a
               className={` ${active === "Home" ? "active" : ""}`}
@@ -48,10 +49,30 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <div className="Login font-bold text-lg">
+      <div className="Login font-bold text-lg hidden md:block">
         <a href="#" className="menuNav">
           Login / Sign Out
         </a>
+      </div>
+
+      {/** Mobile Navigation */}
+      <div className="mobileNav block md:hidden">
+        <button className="btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
