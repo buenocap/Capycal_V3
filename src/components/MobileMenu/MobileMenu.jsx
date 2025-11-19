@@ -1,7 +1,7 @@
 import "./MobileMenu.css";
 import { NavLink } from "react-router";
 
-export default function MobileMenu({ active, onActivePage }) {
+export default function MobileMenu() {
   return (
     <div class="md:hidden flex h-full flex-col justify-between border-e border-gray-100 bg-AshGray/50 rounded-xl px-4 py-2 m-3 text-theme">
       <div class="px-4 py-6 ">
@@ -9,10 +9,7 @@ export default function MobileMenu({ active, onActivePage }) {
           <li>
             <NavLink
               to="/"
-              className={`block rounded-lg px-4 py-2 text-sm font-medium ${
-                active === "Home" ? "mobile-active" : ""
-              }`}
-              onClick={() => onActivePage("Home")}
+              className={`block rounded-lg px-4 py-2 text-sm font-bold`}
             >
               Home
             </NavLink>
@@ -21,10 +18,7 @@ export default function MobileMenu({ active, onActivePage }) {
           <li>
             <NavLink
               to="/calendar"
-              className={`block rounded-lg px-4 py-2 text-sm font-medium ${
-                active === "Calendar" ? "mobile-active" : ""
-              }`}
-              onClick={() => onActivePage("Calendar")}
+              className={`block rounded-lg px-4 py-2 text-sm font-bold `}
             >
               Calendar
             </NavLink>
@@ -33,10 +27,7 @@ export default function MobileMenu({ active, onActivePage }) {
           <li>
             <NavLink
               to="/contact"
-              className={`block rounded-lg px-4 py-2 text-sm font-medium ${
-                active === "Contact" ? "mobile-active" : ""
-              }`}
-              onClick={() => onActivePage("Contact")}
+              className={`block rounded-lg px-4 py-2 text-sm font-bold `}
             >
               Contact
             </NavLink>
@@ -45,11 +36,9 @@ export default function MobileMenu({ active, onActivePage }) {
           <li>
             <details class="group [&amp;_summary::-webkit-details-marker]:hidden">
               <summary
-                class={`flex items-center justify-between rounded-lg px-4 py-2 ${
-                  active === "Account" ? "mobile-active" : ""
-                }`}
+                class={`flex items-center justify-between rounded-lg px-4 py-2`}
               >
-                <span class="text-sm font-medium"> Account </span>
+                <span class="text-sm font-bold"> Account </span>
 
                 <span class="shrink-0 transition duration-300 group-open:-rotate-180">
                   <svg
@@ -71,7 +60,7 @@ export default function MobileMenu({ active, onActivePage }) {
                 <li>
                   <a
                     href="#"
-                    class="block rounded-lg px-4 py-2 text-sm font-medium "
+                    class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500"
                   >
                     Details
                   </a>
@@ -80,7 +69,7 @@ export default function MobileMenu({ active, onActivePage }) {
                 <li>
                   <a
                     href="#"
-                    class="block rounded-lg px-4 py-2 text-sm font-medium "
+                    class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500"
                   >
                     Security
                   </a>
@@ -89,10 +78,7 @@ export default function MobileMenu({ active, onActivePage }) {
                 <li>
                   <NavLink
                     to="/authentication"
-                    className={`block rounded-lg px-4 py-2 text-sm font-medium ${
-                      active === "Authentication" ? "mobile-active" : ""
-                    }`}
-                    onClick={() => onActivePage("Authentication")}
+                    className={`block rounded-lg px-4 py-2 text-sm font-bold `}
                   >
                     Login
                   </NavLink>

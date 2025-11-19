@@ -12,7 +12,7 @@ function App() {
     <>
       <Router>
         <Header />
-        <div className="container mx-auto">
+        <div className="container mx-auto p-4">
           <Routes>
             <Route path="/" element={<WelcomePage />} />
             <Route path="/calendar" element={<DashboardPage />} />

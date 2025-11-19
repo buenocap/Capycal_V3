@@ -4,12 +4,7 @@ import { NavLink } from "react-router";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
 export default function Header() {
-  const [active, setActive] = useState("Home");
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
-
-  function handleActivePage(item) {
-    setActive(item);
-  }
 
   function handleToggleMobileMenu() {
     setToggleMobileMenu(!toggleMobileMenu);
@@ -26,44 +21,24 @@ export default function Header() {
         <nav className="Nav hidden md:block">
           <ul className=" flex flex-row gap-4 text-xl font-bold">
             <li className="menuNav">
-              <NavLink
-                to="/"
-                className={` ${active === "Home" ? "active" : ""}`}
-                id="Home"
-                onClick={() => handleActivePage("Home")}
-              >
+              <NavLink to="/" id="Home">
                 Home
               </NavLink>
             </li>
             <li className="menuNav">
-              <NavLink
-                to="/calendar"
-                className={` ${active === "Calendar" ? "active" : ""}`}
-                id="Calendar"
-                onClick={() => handleActivePage("Calendar")}
-              >
+              <NavLink to="/calendar" id="Calendar">
                 Calendar
               </NavLink>
             </li>
             <li className="menuNav">
-              <NavLink
-                to="/contact"
-                className={` ${active === "Contact" ? "active" : ""}`}
-                id="Contact"
-                onClick={() => handleActivePage("Contact")}
-              >
+              <NavLink to="/contact" id="Contact">
                 Contact
               </NavLink>
             </li>
           </ul>
         </nav>
         <div className="Login font-bold text-lg hidden md:block menuNav">
-          <NavLink
-            to="/authentication"
-            className={` ${active === "Authentication" ? "active" : ""}`}
-            id="Authentication"
-            onClick={() => handleActivePage("Authentication")}
-          >
+          <NavLink to="/authentication" id="Authentication">
             Login
           </NavLink>
         </div>
@@ -111,9 +86,7 @@ export default function Header() {
         </button>
       </div>
 
-      {toggleMobileMenu && (
-        <MobileMenu active={active} onActivePage={handleActivePage} />
-      )}
+      {toggleMobileMenu && <MobileMenu />}
     </>
   );
 }
