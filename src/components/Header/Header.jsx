@@ -1,5 +1,6 @@
 import "./Header.css";
 import { useState } from "react";
+import { NavLink } from "react-router";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
 export default function Header() {
@@ -25,41 +26,46 @@ export default function Header() {
         <nav className="Nav hidden md:block">
           <ul className=" flex flex-row gap-4 text-xl font-bold">
             <li className="menuNav">
-              <a
+              <NavLink
+                to="/"
                 className={` ${active === "Home" ? "active" : ""}`}
-                href="#"
                 id="Home"
                 onClick={() => handleActivePage("Home")}
               >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="menuNav">
-              <a
+              <NavLink
+                to="/calendar"
                 className={` ${active === "Calendar" ? "active" : ""}`}
-                href="#"
                 id="Calendar"
                 onClick={() => handleActivePage("Calendar")}
               >
-                Dashboard
-              </a>
+                Calendar
+              </NavLink>
             </li>
             <li className="menuNav">
-              <a
+              <NavLink
+                to="/contact"
                 className={` ${active === "Contact" ? "active" : ""}`}
-                href="#"
                 id="Contact"
                 onClick={() => handleActivePage("Contact")}
               >
                 Contact
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>
-        <div className="Login font-bold text-lg hidden md:block">
-          <a href="#" className="menuNav">
-            Login / Sign Out
-          </a>
+        <div className="Login font-bold text-lg hidden md:block menuNav">
+          <NavLink
+            to="/authentication"
+            className={` ${active === "Authentication" ? "active" : ""}`}
+            id="Authentication"
+            onClick={() => handleActivePage("Authentication")}
+          >
+            Login
+          </NavLink>
         </div>
 
         {/** Mobile Navigation */}
@@ -71,20 +77,37 @@ export default function Header() {
           aria-controls="menu"
           onClick={handleToggleMobileMenu}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
-            />
-          </svg>
+          {toggleMobileMenu ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
         </button>
       </div>
 

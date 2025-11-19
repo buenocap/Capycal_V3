@@ -1,4 +1,5 @@
 import "./MobileMenu.css";
+import { NavLink } from "react-router";
 
 export default function MobileMenu({ active, onActivePage }) {
   return (
@@ -6,39 +7,39 @@ export default function MobileMenu({ active, onActivePage }) {
       <div class="px-4 py-6 ">
         <ul class="mt-1 space-y-1">
           <li>
-            <a
-              href="#"
+            <NavLink
+              to="/"
               className={`block rounded-lg px-4 py-2 text-sm font-medium ${
                 active === "Home" ? "mobile-active" : ""
               }`}
               onClick={() => onActivePage("Home")}
             >
               Home
-            </a>
+            </NavLink>
           </li>
 
           <li>
-            <a
-              href="#"
+            <NavLink
+              to="/calendar"
               className={`block rounded-lg px-4 py-2 text-sm font-medium ${
                 active === "Calendar" ? "mobile-active" : ""
               }`}
               onClick={() => onActivePage("Calendar")}
             >
               Calendar
-            </a>
+            </NavLink>
           </li>
 
           <li>
-            <a
-              href="#"
+            <NavLink
+              to="/contact"
               className={`block rounded-lg px-4 py-2 text-sm font-medium ${
                 active === "Contact" ? "mobile-active" : ""
               }`}
               onClick={() => onActivePage("Contact")}
             >
               Contact
-            </a>
+            </NavLink>
           </li>
 
           <li>
@@ -86,12 +87,15 @@ export default function MobileMenu({ active, onActivePage }) {
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    class="w-full rounded-lg px-4 py-2 [text-align:_inherit] text-sm font-medium "
+                  <NavLink
+                    to="/authentication"
+                    className={`block rounded-lg px-4 py-2 text-sm font-medium ${
+                      active === "Authentication" ? "mobile-active" : ""
+                    }`}
+                    onClick={() => onActivePage("Authentication")}
                   >
-                    Logout
-                  </a>
+                    Login
+                  </NavLink>
                 </li>
               </ul>
             </details>
