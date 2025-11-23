@@ -12,15 +12,14 @@ function App() {
     <>
       <Router>
         <Header />
-        <div className="container mx-auto p-4">
-          <Routes>
-            <Route path="/" element={<WelcomePage />} />
-            <Route path="/calendar" element={<DashboardPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
-            <Route path="/authentication" element={<AuthenticationPage />} />
-          </Routes>
-        </div>
+
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/calendar" element={<DashboardPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/authentication" element={<AuthenticationPage />} />
+        </Routes>
       </Router>
     </>
   );
