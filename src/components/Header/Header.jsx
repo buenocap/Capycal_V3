@@ -12,81 +12,62 @@ export default function Header() {
 
   return (
     <>
-      <div className="header bg-AshGray/50 rounded-3xl flex justify-between items-center px-4 py-2 m-3 text-theme">
-        <div className=" flex items-center gap-1">
-          <img src="./CapycalLogo.png" alt="Capycal Logo" width={50} />
-          <p className="text-2xl font-extrabold">Capycal</p>
+      {/** Desktop Menu */}
+      <div class="navbar bg-base-100 shadow-sm text-theme hidden md:flex">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-2xl">
+            <img src="/CapycalLogo.png" width={35} />
+            Capycal
+          </a>
         </div>
-        {/** Desktop Navigation */}
-        <nav className="Nav hidden md:block">
-          <ul className=" flex flex-row gap-4 text-xl font-bold">
-            <li className="menuNav">
-              <NavLink to="/" id="Home">
-                Home
-              </NavLink>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <NavLink to="/">Home</NavLink>
             </li>
-            <li className="menuNav">
-              <NavLink to="/calendar" id="Calendar">
-                Calendar
-              </NavLink>
+            <li>
+              <NavLink to="/calendar">Calendar</NavLink>
             </li>
-            <li className="menuNav">
-              <NavLink to="/contact" id="Contact">
-                Contact
-              </NavLink>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
+            <li>
+              <NavLink to="/settings">Settings</NavLink>
             </li>
           </ul>
-        </nav>
-        <div className="Login font-bold text-lg hidden md:block menuNav">
-          <NavLink to="/authentication" id="Authentication">
-            Login
-          </NavLink>
         </div>
-
-        {/** Mobile Navigation */}
-        <button
-          type="button"
-          className="md:hidden block bg-AshGray shadow-lg shadow-AshGray/50 ring ring-AshGray/50 active:bg-DimGray rounded transition duration-350 ease-in-out p-2"
-          aria-label="Main menu"
-          aria-expanded="false"
-          aria-controls="menu"
-          onClick={handleToggleMobileMenu}
-        >
-          {toggleMobileMenu ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fillRule="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fillRule="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
       </div>
 
-      {toggleMobileMenu && <MobileMenu />}
+      {/** Mobile Menu */}
+      <div class="md:hidden navbar bg-base-100 shadow-sm">
+        <div class="flex-none">
+          <button
+            class="btn btn-square btn-ghost"
+            onClick={handleToggleMobileMenu}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="inline-block h-5 w-5 stroke-current"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl text-theme">
+            <img src="/CapycalLogo.png" alt="Capycal Logo" width={35}></img>
+            Capycal
+          </a>
+        </div>
+        <div class="flex-none"></div>
+      </div>
     </>
   );
 }

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin 'daisyui';
 
 @theme {
   --color-Night: #0c120c;
@@ -6,8 +7,5 @@
   --color-DimGray: #6d7275;
   --color-AshGray: #c7d6d5;
   --color-GhostWhite: #ecebf3;
-}
-
-body {
-  background-color: var(--color-GhostWhite);
+  --color-AshWhite: #d6c7c8;
 }
