@@ -8,5 +8,36 @@ export default function MobileMenu() {
   function handleCurrentPage(page) {
     setCurrentPage(page);
   }
-  return <div className="md:hidden "></div>;
+  return (
+    <div className="block menu bg-base-200 rounded-box md:hidden ">
+      <ul>
+        <li>
+          <NavLink to="/" onClick={() => handleCurrentPage("/")}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/calendar"
+            onClick={() => handleCurrentPage("/calendar")}
+          >
+            Calendar
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" onClick={() => handleCurrentPage("/contact")}>
+            Contact
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/settings"
+            onClick={() => handleCurrentPage("/settings")}
+          >
+            Settings
+          </NavLink>
+        </li>
+      </ul>
+    </div>
+  );
 }

@@ -68,6 +68,7 @@ export default function Header() {
         </div>
         <div class="flex-none"></div>
       </div>
+      {toggleMobileMenu && <MobileMenu />}
     </>
   );
 }
