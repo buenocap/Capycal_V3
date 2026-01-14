@@ -6,6 +6,7 @@ import DashboardPage from "./pages/DashboardPage";
 import ContactPage from "./pages/ContactPage";
 import SettingsPage from "./pages/SettingsPage";
 import AuthenticationPage from "./pages/AuthenticationPage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/authentication" element={<AuthenticationPage />} />
         </Routes>
+
+        <Footer />
       </Router>
     </>
   );

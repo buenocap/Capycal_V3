@@ -1,12 +1,12 @@
 export default function WelcomePage() {
   return (
-    <>
-      <div className="m-3 text-theme bg-AshGray/85 rounded-3xl px-4 py-2 flex justify-center">
-        <h1 className="text-4xl font-bold">Welcome to Capycal!</h1>
+    <div className="pb-20 mb-15">
+      <div className=" text-theme bg-AshGray/85  px-4 py-2 flex justify-center mb-5">
+        <h1 className="text-4xl font-bold ">Welcome to Capycal!</h1>
       </div>
-      <div className=" m-3 text-theme bg-AshGray/85 rounded-3xl px-4 py-2 ">
-        <div className="grid grid-cols-2">
-          <div className="section-1">
+      <div className="bg-AshGray text-theme">
+        <div className="grid grid-cols-2 ">
+          <div className="section-1 p-3">
             <h2 className="text-2xl font-bold mb-2">What is Capycal?</h2>
             <p>
               Capycal is a calendar app that allows you to create and manage
@@ -23,28 +23,25 @@ export default function WelcomePage() {
               but with your help it will grow and become better.
             </p>
           </div>
-          <div className="section-2 self-center">
-            <img
-              src="./CapycalLogo.png"
-              alt="Capycal Logo"
-              width={300}
-              className="mx-auto"
-            />
+
+          <div className="section-2 flex justify-center self-center">
+            <img src="/CapycalLogo.png" width={150} />
           </div>
         </div>
       </div>
-      <div className="m-3 text-theme bg-AshGray/85 rounded-3xl px-4 py-2">
-        {" "}
-        <h2 className="text-2xl font-bold">How to use Capycal</h2>
+      <br />
+      <div className="bg-AshGray text-theme">
+        <h2 className="text-2xl font-bold mb-2">How to use Capycal</h2>
         <p>
           Capycal was made with simplicity in mind. To use Capycal, you will
           need to sign up for an account. Once you have an account, you can
           create and manage your own calendar events.
         </p>
       </div>
-      <div className="m-3 text-theme bg-AshGray/85 rounded-3xl px-4 py-2">
-        <h3 className="text-xl font-bold">Dev Log</h3>
+      <br />
+      <div className="bg-AshGray text-theme">
+        <h3 className="text-2xl font-bold mb-2">Dev Log</h3>
       </div>
-    </>
+    </div>
   );
 }

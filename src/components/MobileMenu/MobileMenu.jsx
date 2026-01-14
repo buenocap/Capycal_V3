@@ -9,7 +9,7 @@ export default function MobileMenu() {
     setCurrentPage(page);
   }
   return (
-    <div className="menu w-full bg-base-200 rounded-box md:hidden text-theme shadow-md">
+    <div className="menu w-full bg-base-200 rounded-box md:hidden text-theme shadow-md ">
       <ul>
         <li>
           <NavLink to="/" onClick={() => handleCurrentPage("/")}>
