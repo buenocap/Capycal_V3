@@ -5,21 +5,25 @@ import WelcomePage from "./pages/WelcomePage";
 import DashboardPage from "./pages/DashboardPage";
 import ContactPage from "./pages/ContactPage";
 import SettingsPage from "./pages/SettingsPage";
-import AuthenticationPage from "./pages/AuthenticationPage";
 import Footer from "./components/Footer/Footer";
+import SignUp_Page from "./pages/SignUp_Page";
+import LogIn_Page from "./pages/LogIn_Page";
 
 function App() {
+  //TODO: If token is in localstorage, retrieve user data from database
+  //TODO: Create context to manage user data and data retrieval in app
   return (
     <>
       <Router>
         <Header />
-
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/calendar" element={<DashboardPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/settings" element={<SettingsPage />} />
-          <Route path="/authentication" element={<AuthenticationPage />} />
+          <Route path="/login" element={<LogIn_Page />} />
+          <Route path="/signup" element={<SignUp_Page />} />
+          <Route path="*" element={<WelcomePage />} />
         </Routes>
 
         <Footer />

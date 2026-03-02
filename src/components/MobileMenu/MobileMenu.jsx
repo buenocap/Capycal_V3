@@ -25,8 +25,11 @@ export default function MobileMenu() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact" onClick={() => handleCurrentPage("/contact")}>
-            Contact
+          <NavLink
+            to="/authentication"
+            onClick={() => handleCurrentPage("/authentication")}
+          >
+            Account
           </NavLink>
         </li>
         <li>

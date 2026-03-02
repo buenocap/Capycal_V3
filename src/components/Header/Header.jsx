@@ -1,21 +1,24 @@
 import "./Header.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
 export default function Header() {
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+  const token = localStorage.getItem("token");
 
   function handleToggleMobileMenu() {
     setToggleMobileMenu(!toggleMobileMenu);
   }
+
+  useEffect(() => {});
 
   return (
     <>
       {/** Desktop Menu */}
       <div className="navbar bg-base-100 shadow-sm text-theme hidden md:flex">
         <div className="flex-1">
-          <a className="btn btn-ghost text-2xl">
+          <a href="/" className="btn btn-ghost text-2xl">
             <img src="/CapycalLogo.png" width={35} />
             Capycal
           </a>
@@ -29,7 +32,9 @@ export default function Header() {
               <NavLink to="/calendar">Calendar</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to={token ? "/login" : "/signup"}>
+                Login / Sign Up
+              </NavLink>
             </li>
             <li>
               <NavLink to="/settings">Settings</NavLink>
@@ -79,7 +84,7 @@ export default function Header() {
           </button>
         </div>
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl text-theme">
+          <a href="/" className="btn btn-ghost text-xl text-theme">
             <img src="/CapycalLogo.png" alt="Capycal Logo" width={35}></img>
             Capycal
           </a>
